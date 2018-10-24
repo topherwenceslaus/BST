@@ -1,4 +1,4 @@
-class Node{
+ class Node{
   constructor(data){
     this.data = data
     this.left = null
@@ -128,4 +128,22 @@ class BST{
 
         return
     }
+
+    calculateHeight(node){
+          if(node === null || node === undefined){
+            return 0
+          }
+
+          let leftNode = this.calculateHeight(node.left)
+          let rightNode =  this.calculateHeight(node.right)
+
+          if(leftNode>rightNode){
+              return leftNode + 1
+          }
+          else{
+              return rightNode + 1
+          }
+    }
+
+  
 }
